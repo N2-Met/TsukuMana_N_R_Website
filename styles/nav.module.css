@@ -1,0 +1,26 @@
+.list {
+  display: flex;
+  gap: 2em;
+}
+
+/* __　.list div:hover部について　テキストでは<a>タグだがエラーが出るため、<div>で対応(自己判断) */
+
+/* ホバーできる環境(PC,デスクトップ環境)への設定 */
+@media (hover: hover) {
+  .list div:hover {
+    color: var(--accent);
+  }
+}
+
+/* ホバー不可能の環境(モバイル端末)に対する設定 */
+@media (hover: none) {
+  .list div {
+    /* transparent...意味：透明化。　
+    タップ時に適用されるデバイス標準のハイライトカラーを削除(無効化)。 */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .list div:active {
+    color: var(--accent);
+  }
+}
