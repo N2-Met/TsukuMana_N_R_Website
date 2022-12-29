@@ -1,13 +1,17 @@
+import Container from "components/container";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 // import styles from "../styles/Home.module.css";
-
 import Layout from "components/layout";
 import Hero from "components/hero";
 
 export default function Blog() {
-  return <Hero title="Blog" subtitle="Recent Pasts" />;
+  return (
+    <Container>
+      <Hero title="Blog" subtitle="Recent Pasts" />
+    </Container>
+  );
 }
 
 /*
