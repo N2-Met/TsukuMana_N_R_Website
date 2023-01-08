@@ -1,3 +1,4 @@
+import Meta from "components/meta";
 import Container from "components/container";
 import Hero from "components/hero";
 import PostBody from "components/post-body";
@@ -13,8 +14,8 @@ import {
 export default function About() {
   return (
     <Container>
+      <Meta pageTitle="アバウト" />{" "}
       <Hero title="About" subtitle="About development activities" />
-
       <figure>
         <Image
           src={eyecatch}
@@ -25,7 +26,6 @@ export default function About() {
           placeholder="blur"
         />
       </figure>
-
       <TwoColumn>
         <TwoColumnMain>
           <PostBody>
