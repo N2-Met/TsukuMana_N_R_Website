@@ -10,7 +10,7 @@ import Hero from "components/hero";
 export default function Blog() {
   return (
     <Container>
-      <Meta pageTitle="ブログ" />
+      <Meta />
       <Hero title="CUBE" subtitle="アウトプットしていくサイト" imageOn />
     </Container>
   );
