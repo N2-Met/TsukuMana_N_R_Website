@@ -1,5 +1,3 @@
-/*
-
 import { getPostBySlug } from "lib/api";
 import Container from "components/container";
 
@@ -33,8 +31,7 @@ export async function getStaticProps() {
   };
 }
 
-*/
-
+/*
 import { client } from "lib/api";
 
 export default function Schedule() {
@@ -57,3 +54,5 @@ export async function getStaticProps() {
 
   return { props: {} };
 }
+
+*/
