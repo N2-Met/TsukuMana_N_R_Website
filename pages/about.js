@@ -19,7 +19,7 @@ export default function About() {
         pageDesc="About development activities"
         pageImg={eyecatch.src}
         pageImgW={eyecatch.width}
-        pageImgH={eyacach.height}
+        pageImgH={eyecatch.height}
       />{" "}
       <Hero title="About" subtitle="About development activities" />
       <figure>
