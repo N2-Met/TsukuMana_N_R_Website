@@ -1,4 +1,4 @@
-import { getPostBySlug } from "lib/api";
+import { getPostBySlug, getAllSlugs } from "lib/api";
 import { extractText } from "lib/extract-text";
 import Meta from "components/meta";
 import Container from "components/container";
@@ -17,7 +17,7 @@ import { getPlaiceholder } from "plaiceholder";
 //ローカルの代替アイキャッチ画像
 import { eyecatchLocal } from "lib/constants";
 
-export default function Schedule({
+export default function Post({
   title,
   publish,
   content,
@@ -65,11 +65,21 @@ export default function Schedule({
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
+  const allSlugs = await getAllSlugs();
+  return {
+    // paths: ["/blog/schedule", "/blog/music", "/blog/microFs"],
+    paths: allSlugs.map(({ slug }) => `/blog/${slug}`),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
   // const slug = "schedule";
-  const slug = "micro";
+  const slug = context.params.slug;
 
   const post = await getPostBySlug(slug);
+
   const description = extractText(post.content);
   // "hoge??foo"左辺hogeがnullまたはundefinedの場合に右辺を返す。
   const eyecatch = post.eyecatch ?? eyecatchLocal;
