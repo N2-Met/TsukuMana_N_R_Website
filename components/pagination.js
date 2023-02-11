@@ -1,16 +1,40 @@
-import styles from 'styles/pagination.module.css'
-import link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import styles from "styles/pagination.module.css";
+import Link from "prev/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Pagination({
-    prevText = '',
-    prevUrl = '',
-    prevText = '',
-    nextText = '',
-    nextUrl = '',
+  prevText = "",
+  prevUrl = "",
+  nextText = "",
+  nextUrl = "",
 }) {
-    return (
-        
-    )
+  return (
+    <ul className={styles.flexContainer}>
+      {prevText && prevUrl && (
+        <li className={styles.prev}>
+          <Link href={prevUrl}>
+            <a className={styles.iconText}>
+              <FontAwesomeIcon icon={faChevronLeft} color="var(--gray-25)" />
+              <span> {prevText}</span>
+            </a>
+          </Link>
+        </li>
+      )}
+
+      {nextText && nextUrl && (
+        <li className={styles.next}>
+          <Link href={nextUrl}>
+            <a className={styles.iconText}>
+              <FontAwesomeIcon icon={faChevronLeft} color="var(--gray-25)" />
+              <span> {nextText}</span>
+            </a>
+          </Link>
+        </li>
+      )}
+    </ul>
+  );
 }
