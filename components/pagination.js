@@ -1,5 +1,5 @@
 import styles from "styles/pagination.module.css";
-import Link from "prev/link";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
@@ -13,6 +13,7 @@ export default function Pagination({
   nextUrl = "",
 }) {
   return (
+    /*
     <ul className={styles.flexContainer}>
       {prevText && prevUrl && (
         <li className={styles.prev}>
@@ -29,9 +30,34 @@ export default function Pagination({
         <li className={styles.next}>
           <Link href={nextUrl}>
             <a className={styles.iconText}>
-              <FontAwesomeIcon icon={faChevronLeft} color="var(--gray-25)" />
+              <FontAwesomeIcon icon={faChevronRight} color="var(--gray-25)" />
               <span> {nextText}</span>
             </a>
+          </Link>
+        </li>
+      )}
+    </ul>
+*/
+
+    <ul className={styles.flexContainer}>
+      {prevText && prevUrl && (
+        <li className={styles.prev}>
+          <Link href={prevUrl} className={styles.iconText}>
+            {/* <a className={styles.iconText}> */}
+            <FontAwesomeIcon icon={faChevronLeft} color="var(--gray-25)" />
+            <span> {prevText}</span>
+            {/* </a> */}
+          </Link>
+        </li>
+      )}
+
+      {nextText && nextUrl && (
+        <li className={styles.next}>
+          <Link href={nextUrl} className={styles.iconText}>
+            {/* <a className={styles.iconText}> */}
+            <FontAwesomeIcon icon={faChevronRight} color="var(--gray-25)" />
+            <span> {nextText}</span>
+            {/* </a> */}
           </Link>
         </li>
       )}
