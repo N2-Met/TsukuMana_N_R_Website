@@ -8,17 +8,20 @@ export default function Posts({ posts }) {
       {posts.map(({ title, slug, eyecatch }) => (
         <article className={styles.post} key={slug}>
           <Link href={`/blog/${slug}`}>
-            <gigure>
+            <figure>
               <Image
                 src={eyecatch.url}
                 alt=""
-                layout="responsive"
-                width={eyecatch.width}
-                height={eyecatch.height}
+                // layout="responsive"
+                // width={eyecatch.width}
+                // height={eyecatch.height}
+                layout="fill"
+                objectFit="cover"
+                sizes="(min-width: 1152px) 576px,50vw"
                 placeholder="blur"
                 blurDataURL={eyecatch.blurDataURL}
               />
-            </gigure>
+            </figure>
             <h2>{title}</h2>
           </Link>
         </article>
