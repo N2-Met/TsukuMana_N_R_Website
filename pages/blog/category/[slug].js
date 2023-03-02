@@ -1,18 +1,20 @@
 import { getAllCategories } from "lib/api";
-import Container from "components/container/";
+import Container from "components/container";
 import PostHeader from "components/post-header";
 
 export default function Category({ name }) {
   return (
     <Container>
-      <postHeader title={name} subtitle="Blog Category" />
+      <PostHeader title={name} subtitle="Blog Category" />
     </Container>
   );
 }
 
 export async function getStaticPaths() {
+  const allCats = await getAllCategories();
   return {
-    path: ["/blog/category/technology"],
+    // paths: ["/blog/category/technology"],
+    paths: allCats.map(({ slug }) => `/blog/category/${slug}`),
     fallback: false,
   };
 }
