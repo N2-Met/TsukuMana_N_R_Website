@@ -1,11 +1,16 @@
-import { getAllCategories } from "lib/api";
+import { getAllCategories, getAllPostsByCategory } from "lib/api";
 import Container from "components/container";
 import PostHeader from "components/post-header";
+import Posts from "components/posts";
+import { getPlaiceholder } from "plaiceholder";
 
-export default function Category({ name }) {
+import { eyecatchLocal } from "lib/constants";
+
+export default function Category({ name, posts }) {
   return (
     <Container>
       <PostHeader title={name} subtitle="Blog Category" />
+      <Posts posts={psots} />
     </Container>
   );
 }
@@ -24,6 +29,10 @@ export async function getStaticProps(context) {
 
   const allCats = await getAllCategories();
   const cat = allCats.find(({ slug }) => slug === catSlug);
+
+  const posts = await getAllPostsByCategory(cat.id);
+
+  //////////////////////////////////////////////////////
 
   return {
     props: {
