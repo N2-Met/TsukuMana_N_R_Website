@@ -4,6 +4,8 @@ import styles from "styles/nav.module.css";
 export default function Nav() {
   return (
     <nav>
+      <button className={styles.btn}> MENU</button>
+
       <ul className={styles.list}>
         <li>
           <Link href="/">
