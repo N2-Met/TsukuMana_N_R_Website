@@ -1,3 +1,30 @@
+/*デスクトップ*/
+@media (min-width: 768px) {
+  .btn {
+    display: none;
+  }
+}
+
+/* モバイル */
+@media (max-width: 767px) {
+  /* ﾎﾞﾀﾝ */
+  .btn {
+    position: relative;
+    z-index: 200;
+  }
+
+  .close .btn {
+    color: blue;
+  }
+
+  .open .btn {
+    color: red;
+  }
+
+  /* メニュー（オーバーレイ） */
+  ///////////////////////////////////////////
+}
+
 .list {
   display: flex;
   gap: 2em;
