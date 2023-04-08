@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "styles/nav.module.css";
 
 export default function Nav() {
+  // ハンバーガーメニューの状態管理[変数,更新のための関数]
   const [navIsOpen, setNavIsOpen] = useState(false);
 
   const toggleNav = () => {
@@ -16,8 +17,8 @@ export default function Nav() {
   return (
     <nav className={navIsOpen ? styles.open : styles.close}>
       <button className={styles.btn} onClick={toggleNav}>
-        {" "}
-        MENU
+        <span className={styles.bar}></span>
+        <span className="sr-only">MENU</span>
       </button>
 
       <ul className={styles.list}>
