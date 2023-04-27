@@ -5,12 +5,20 @@ import PostBody from "components/post-body";
 import Contact from "components/contact";
 import Accordion from "components/accordion";
 import Image from "next/image";
-import eyecatch from "images/about.jpg";
+// import eyecatch from "images/about.jpg";
 import {
   TwoColumn,
   TwoColumnMain,
   TwoColumnSidebar,
 } from "components/two-column";
+
+const eyecatch = {
+  src: "https://images.microcms-assets.io/assets/c9420bce48424df09245ddb43c82dc21/d3ab043a96c940a7a62bc4c31278281e/about.jpg",
+  height: 960,
+  width: 1920,
+  blurDataURL:
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGMofPL/yv//8x+9y7r/m6Hu638GvwQmDobCa+8B4vwPOhdiFzEAAAAASUVORK5CYII=,",
+};
 
 export default function About() {
   return (

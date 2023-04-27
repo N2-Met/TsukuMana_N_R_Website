@@ -1,6 +1,16 @@
 import styles from "styles/hero.module.css";
 import Image from "next/image";
-import cube from "images/cube.jpg";
+//import cube from "images/cube.jpg";
+
+const cube = {
+  src: "https://images.microcms-assets.io/assets/c9420bce48424df09245ddb43c82dc21/41be5ae839184f678c85475589aac389/cube.jpg",
+  height: 1300,
+  width: 1500,
+  // "data:image/jpg;base64,"は、Base64エンコードされたJPEG画像のデータを含むデータURIスキームの一部。
+  // このスキームを使用すると、Webページのソースコードに画像を直接埋め込める。
+  blurDataURL:
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGMofPL/yv//8x+9y7r/m6Hu638GvwQmDobCa+8B4vwPOhdiFzEAAAAASUVORK5CYII=",
+};
 
 export default function Hero({ title, subtitle, imageOn = false }) {
   return (
