@@ -6,7 +6,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: "imgix",
-    path: "",
+    path: "https://images.microcms-assets.io/",
     domains: ["images.microcms-assets.io"],
   },
 };
