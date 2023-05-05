@@ -1,12 +1,10 @@
 /** @type {import('next').NextConfig} */
 
-//設定ファイルなので反映させるには
-
 const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: "imgix",
-    path: "https://images.microcms-assets.io/",
+    path: "https://images.microcms-assets.io/assets/",
     domains: ["images.microcms-assets.io"],
   },
 };
