@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
+    "//": "next build && next export",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
@@ -22,7 +23,7 @@
     "html-react-parser": "^3.0.8",
     "html-to-text": "^9.0.3",
     "microcms-js-sdk": "^2.3.2",
-    "next": "13.0.7",
+    "next": "^13.4.1",
     "next-sitemap": "^4.0.7",
     "placeholder": "^1.0.2",
     "plaiceholder": "^2.5.0",
@@ -32,6 +33,7 @@
     "sharp": "^0.31.3"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^8.5.0"
+    "eslint-config-prettier": "^8.5.0",
+    "next-export-optimize-images": "^2.1.0"
   }
 }
