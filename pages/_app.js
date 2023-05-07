@@ -22,6 +22,10 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router.events]);
 
+  // getLayout関数を持っている場合、その関数を参照
+  // pagesは、"pages ディレクトリ内の React コンポーネント"がこの引数として渡される。
+  const getLayout = Component.getLayout || ((page) => page);
+
   return (
     <>
       <Script
@@ -39,9 +43,7 @@ function MyApp({ Component, pageProps }) {
           gtag('config', '${gtag.GA_MEASUREMENT_ID}'), `,
         }}
       />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
     </>
   );
 }
